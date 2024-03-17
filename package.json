@@ -1,7 +1,7 @@
 {
-  "name": "module-13-challenge-orm",
+  "name": "E-Commerce Back End",
   "version": "1.0.0",
-  "description": "",
+  "description": "Back end for an e-commerce site utilizing the Express.js API and Sequalize to interact with PostgreSQL database.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,11 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@work.github.com:coding-boot-camp/module-13-challenge-orm.git"
+    "url": "https://github.com/briandwach/e-commerce-back-end"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "nodemon": "^2.0.3"
   },
