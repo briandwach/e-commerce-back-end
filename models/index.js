@@ -5,6 +5,15 @@ const Tag = require('./Tag');
 const ProductTag = require('./ProductTag');
 
 // Products belongsTo Category
+Product.belongsToMany(Location, {
+  // Define the third table needed to store the foreign keys
+  through: {
+    model: Trip,
+    unique: false
+  },
+  // Define an alias for when data is retrieved
+  as: 'planned_trips'
+});
 
 // Categories have many Products
 
