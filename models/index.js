@@ -4,6 +4,8 @@ const Category = require('./Category');
 const Tag = require('./Tag');
 const ProductTag = require('./ProductTag');
 
+// MAY NEED TO ADD SOME ADDITIONAL PROPERTIES TO DEFINE UNIQUENESS IN THE FOREIGN KEY RELATIONSHIPS OR ALTER DEFAULTS ON DELETE
+
 // Products belongsTo Category
 Product.belongsTo(Category, {
   foreignKey: 'category_id',
