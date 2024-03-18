@@ -7,28 +7,16 @@ const ProductTag = require('./ProductTag');
 // MAY NEED TO ADD SOME ADDITIONAL PROPERTIES TO DEFINE UNIQUENESS IN THE FOREIGN KEY RELATIONSHIPS OR ALTER DEFAULTS ON DELETE
 
 // Products belongsTo Category
-Product.belongsTo(Category, {
-  foreignKey: 'category_id',
-});
+Product.belongsTo(Category, { foreignKey: 'category_id' });
 
 // Categories have many Products
-Category.hasMany(Product, {
-  foreignKey: 'category_id',
-});  
+Category.hasMany(Product, { foreignKey: 'category_id' });
 
 // Products belongToMany Tags (through ProductTag)
-Product.belongsToMany(Tag, {
-  through: {
-    model: ProductTag,
-  }
-});
+Product.belongsToMany(Tag, { through: { model: ProductTag, unique: false } });
 
 // Tags belongToMany Products (through ProductTag)
-Tag.belongsToMany(Product, {
-  through: {
-    model: ProductTag
-  }
-});
+Tag.belongsToMany(Product, { through: { model: ProductTag, unique: false } });
 
 module.exports = {
   Product,
