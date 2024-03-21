@@ -3,9 +3,8 @@ const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
 
+// Request to view all categories and related product data
 router.get('/', async (req, res) => {
-  // find all categories
-  // be sure to include its associated Products
   try {
     const categories = await Category.findAll({
       include: [{ model: Product }],
@@ -17,9 +16,8 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Request to view a specific category referenced by ID and related product data
 router.get('/:id', async (req, res) => {
-  // find one category by its `id` value
-  // be sure to include its associated Products
   try {
     const category = await Category.findOne({
       where: { id: req.params.id },
@@ -32,8 +30,8 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// Request to create a new category
 router.post('/', async (req, res) => {
-  // create a new category
   try {
     const addCategory = await Category.create(req.body);
     res.status(200).json(addCategory);
@@ -42,8 +40,8 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Request to update a category referenced by its ID
 router.put('/:id', async (req, res) => {
-  // update a category by its `id` value
   try {
     const updateCategory = await Category.update(
       { category_name: req.body.category_name },
@@ -55,8 +53,8 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+// Request to delete a category referenced by its ID
 router.delete('/:id', async (req, res) => {
-  // delete a category by its `id` value
   try {
     const deleteCategory = await Category.destroy({
       where: {
